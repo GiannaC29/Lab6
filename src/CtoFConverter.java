@@ -1,0 +1,30 @@
+void main()
+{
+    Scanner in = new Scanner(System.in);
+
+    double cVal = 0;
+    double fVal = 0;
+    boolean done = false;
+    String trash = "";
+
+    // F = C * 9.0/5 + 32
+
+    do
+    {
+        IO.print("Enter the C value: ");
+        if (in.hasNextDouble())
+        {
+            cVal = in.nextDouble();
+            fVal = cVal * 9.0/5 + 32;
+            IO.println("The value " + cVal + " in Celsius is " + fVal + "in Farenheit ");
+            done = true;
+        }
+        else
+        {
+            trash = in.nextLine();
+            IO.println("you must enter a valid farenhite value not " + trash);
+            IO.println("Try again");
+        }
+    }
+    while (!done);
+}
